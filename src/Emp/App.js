@@ -50,35 +50,39 @@ const App = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <FilterOption nameOption={nameOption} data={fname} />
-      <div className="row mb-2">
-        <label className=" bg-primary form-label ">
-          Search Box:{" "}
-          <span className="bg-primary align-items-end">
-            {filteredEmp.length}
-          </span>
-        </label>
-        <input
-          onChange={searchvalue}
-          className=" form-control rounded-top"
-          type="text"
-          placeholder="Search Name..."
-        />
+    <>
+      <div className="sticky-top bg-dark shadow mb-3 p-2 rounded-bottom">
+        <FilterOption nameOption={nameOption} data={fname} />
       </div>
-      <div className="row bg-blue gy-4">
-        {filteredEmp.map((data, i) => (
-          <EmpCard
-            key={i}
-            name={data.name}
-            post={data.desgination}
-            img={data.img}
-            id={data}
-            empcode={data.empcode}
+      <div className="container-fluid">
+        <div className="row mb-2">
+          <label className=" bg-primary form-label ">
+            Search Box:{" "}
+            <span className="bg-primary align-items-end">
+              {filteredEmp.length}
+            </span>
+          </label>
+          <input
+            onChange={searchvalue}
+            className=" form-control rounded-top"
+            type="text"
+            placeholder="Search Name..."
           />
-        ))}
+        </div>
+        <div className="row bg-blue gy-4">
+          {filteredEmp.map((data, i) => (
+            <EmpCard
+              key={i}
+              name={data.name}
+              post={data.desgination}
+              img={data.img}
+              id={data}
+              empcode={data.empcode}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

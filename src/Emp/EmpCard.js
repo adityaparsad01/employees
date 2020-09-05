@@ -3,8 +3,8 @@ import logo from "./emp-logo.svg";
 
 const EmpCard = ({ name, post, img, id, empcode }) => {
   return (
-    <div className="col-3">
-      <div className="card" style={{ width: "18vw" }}>
+    <div className="col-3 col-12 col-lg-3">
+      <div className="card">
         <img src={img || logo} className="card-img-top p-2" alt={img} />
         <div className="card-body">
           <h6 className="card-title">{name}</h6>
